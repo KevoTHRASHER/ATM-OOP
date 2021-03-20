@@ -4,6 +4,6 @@ public class Deposito extends OperacionesATM {
 
 	@Override
 	public void OperacionesATM() {
-		saldo = saldo + deposito
+		saldo = saldo + deposito;
 	}
 }
