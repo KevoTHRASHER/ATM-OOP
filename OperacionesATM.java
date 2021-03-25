@@ -8,16 +8,18 @@ public abstract class OperacionesATM {
 	Scanner entradaTeclado = new Scanner(System.in);
 	Menu mensajeroMenu = new Menu();
 
-
-	public void ImprimeSaldo(){
+		public void entradaRetiro() {
 		System.out.println("----------------------------------------------------");
-		System.out.println("Tu SALDO es : " + saldo );
+		System.out.println("Introduce la cantidad a RETIRAR : ");
 		System.out.println("----------------------------------------------------");
+		retiro = entradaTeclado.nextInt();
 	}
 
-	public void entradaRetiro() {
-		System.out.println("Introduce la cantidad a RETIRAR : ");
-		retiro = entradaTeclado.nextInt();
+	public void entradaDeposito() {
+		System.out.println("----------------------------------------------------");
+		System.out.println("Introduce la cantidad a DEPOSITAR : ");
+		System.out.println("----------------------------------------------------");
+		deposito = entradaTeclado.nextInt();
 	}
 
 	public abstract void OperacionesATM();

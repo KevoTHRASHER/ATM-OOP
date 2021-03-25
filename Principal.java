@@ -9,30 +9,33 @@ public class Principal {
 	public static void main(String[] args) {
 
 		Menu mensajeroMenu = new Menu();
-		System.out.println(mensajeroMenu.entradaOperacionUsuario());
+		mensajeroMenu.ImprimeMenu();
 
-		if(mensajeroOperacionesATM.entradaOperacionUsuario == 1) {
-			mensajeroOperacionesATM.ImprimeSaldo();
-			mensajeroOperacionesATM.EntradaOperacionMenuUsuario();
+		if(mensajeroMenu.entradaOperacionUsuario == 1) {
+			OperacionesATM mensajeroOperacionesATMConsultaSaldo = new ConsultaSaldo();
+			mensajeroOperacionesATMConsultaSaldo.OperacionesATM();
+			mensajeroMenu.ImprimeMenu();
 		}
-		else if(mensajeroOperacionesATM.entradaOperacionUsuario == 2) {
-			OperacionesATM mensajeroRetiro = new Retiro();
-			mensajeroRetiro.OperacionesATM();
-			mensajeroOperacionesATM.ImprimeSaldo();
-			mensajeroOperacionesATM.entradaOperacionUsuario();
+		else if(mensajeroMenu.entradaOperacionUsuario == 2) {
+			OperacionesATM mensajeroOpercionesATMRetiro = new Retiro();
+			mensajeroOpercionesATMRetiro.entradaRetiro();
+			mensajeroOpercionesATMRetiro.OperacionesATM();
+			OperacionesATM mensajeroOperacionesATMConsultaSaldo = new ConsultaSaldo();
+			mensajeroOperacionesATMConsultaSaldo.OperacionesATM();
+			mensajeroMenu.ImprimeMenu();
 		}
-		else if(mensajeroOperacionesATM.entradaOperacionUsuario == 3) {
-			OperacionesATM mensajeroDeposito = new Deposito();
-			mensajeroDeposito.OperacionesATM();
-			mensajeroDeposito.ImprimeSaldo();
-			mensajeroDeposito.entradaOperacionUsuario();
+		else if(mensajeroMenu.entradaOperacionUsuario == 3) {
+			OperacionesATM mensajeroOperacionesATMDeposito = new Deposito();
+			mensajeroOperacionesATMDeposito.entradaDeposito();
+			mensajeroOperacionesATMDeposito.OperacionesATM();
+			mensajeroMenu.ImprimeMenu();
 		}
-		else if( mensajeroOperacionesATM.entradaOperacionUsuario == 4 ) {
+		else if( mensajeroMenu.entradaOperacionUsuario == 4 ) {
 			System.exit(0);
 		}
 		else {
 			System.out.println("SELECCIONE UNA OPCIÓN VÁLIDA");
-			mensajeroOperacionesATM.EntradaOperacionUsuario();
+			mensajeroMenu.ImprimeMenu();
 		}
 
 	}
