@@ -24,20 +24,13 @@ public abstract class OperacionesATM {
 		//saldo = saldo = deposito;
 	}
 
-	public void ActualizaRetiroSaldo() {
-		EntradaRetiro();
+	public void ActualizaRetiroSaldo {
+		EntradaDeposito();
 		System.out.println("----------------------------------------------------");
 		System.out.println("RETIRARASTE : " + retiro);
 		System.out.println("Tu SALDO ACTUAL : " + saldo);
 		System.out.println("----------------------------------------------------");
-	}
 
-	public void ActualizaDepositoSaldo() {
-		EntradaDeposito();
-		System.out.println("----------------------------------------------------");
-		System.out.println("DEPOSITASTE : " + deposito);
-		System.out.println("Tu SALDO ACTUAL : " + saldo);
-		System.out.println("----------------------------------------------------");
 	}
 
 	public abstract void OperacionesATM();
