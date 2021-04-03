@@ -1,0 +1,44 @@
+package atm;
+
+import java.util.Scanner;
+
+public abstract class OperacionesATM {
+	protected int entradaOperacionUsuario, retiro, deposito, saldo = 500;
+
+	Scanner entradaTeclado = new Scanner(System.in);
+	Menu mensajeroMenu = new Menu();
+
+		public void EntradaRetiro() {
+		System.out.println("----------------------------------------------------");
+		System.out.println("Introduce la cantidad a RETIRAR : ");
+		System.out.println("----------------------------------------------------");
+		retiro = entradaTeclado.nextInt();
+		//saldo = saldo - retiro;
+	}
+
+	public void EntradaDeposito() {
+		System.out.println("----------------------------------------------------");
+		System.out.println("Introduce la cantidad a DEPOSITAR : ");
+		System.out.println("----------------------------------------------------");
+		deposito = entradaTeclado.nextInt();
+		//saldo = saldo = deposito;
+	}
+
+	public void ActualizaRetiroSaldo() {
+		EntradaRetiro();
+		System.out.println("----------------------------------------------------");
+		System.out.println("RETIRARASTE : " + retiro);
+		System.out.println("Tu SALDO ACTUAL : " + saldo);
+		System.out.println("----------------------------------------------------");
+	}
+
+	public void ActualizaDepositoSaldo() {
+		EntradaDeposito();
+		System.out.println("----------------------------------------------------");
+		System.out.println("DEPOSITASTE : " + deposito);
+		System.out.println("Tu SALDO ACTUAL : " + saldo);
+		System.out.println("----------------------------------------------------");
+	}
+
+	public abstract void OperacionesATM();
+}
